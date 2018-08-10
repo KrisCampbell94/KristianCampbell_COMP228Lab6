@@ -7,11 +7,11 @@ class Account {
   public double getBalance() { 
     return balance; 
   } 
-  public void deposit(double amount) { 
+  public synchronized void deposit(double amount) {
     balance += amount;
     System.out.println("After deposit balance is: "+balance);
   } 
-  public void withdraw(double amount) { 
+  public synchronized void withdraw(double amount) {
 	  if ( balance >= amount ) { balance -= amount; }
   } 
 }
